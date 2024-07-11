@@ -1,0 +1,87 @@
+@import "../../styles/mixins.scss";
+
+
+.reviews {
+  background-image: url('../../assets/reviews/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include media-sm {
+    padding-top: 24px;
+  }
+
+  &-comments {
+    padding-top: 86px;
+    display: flex;
+    overflow-x: hidden; /* Скрываем горизонтальный скролл */
+    scroll-snap-type: x mandatory; /* Включаем привязку скролла */
+    width: 100%; /* Ширина контейнера равна 100% */
+
+    @include media-sm {
+      padding-top: 32px;
+    }
+
+    p {
+      min-width: 100%; /* Каждый параграф занимает полную ширину контейнера */
+      scroll-snap-align: start; /* Привязка параграфа к началу контейнера */
+      box-sizing: border-box; /* Размеры включают padding и border */
+
+      font-size: 28px;
+      line-height: 44.8px;
+
+      @include media-sm {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  .human {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+
+    &.hidden {
+      opacity: 0;
+    }
+
+    img {
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      overflow: hidden;
+    }
+
+    &-description {
+      display: flex;
+      flex-direction: column;
+
+      h6 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+      }
+
+      span {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 500;
+        color: rgba(135, 140, 145, 1);
+      }
+    }
+  }
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 72px 0 102px 0;
+
+    @include media-sm {
+      padding: 42px 0 72px 0;
+      justify-content: center;
+    }
+
+  }
+}

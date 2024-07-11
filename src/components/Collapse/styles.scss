@@ -1,0 +1,35 @@
+@import '../../styles/mixins.scss';
+
+
+.custom-collapse {
+  width: 560px;
+
+  &__header {
+    padding: 16px 24px;
+    cursor: pointer;
+    user-select: none; /* предотвращает выделение текста */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* центрирует иконку и текст вертикально */
+    border-top: 1px solid #ccc; /* оставляем только верхнюю границу */
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+
+  &__content-wrapper {
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  &__content {
+    padding: 16px 24px; /* Сохраняем вертикальный паддинг */
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500;
+    color: rgba(135, 140, 145, 1);
+    line-height: 28.8px;
+  }
+}

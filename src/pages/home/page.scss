@@ -1,0 +1,181 @@
+@import '../../styles/mixins.scss';
+
+
+.container {
+  padding: 0 10px;
+  width: 1300px;
+  margin: 0 auto;
+
+  @include media-xl {
+    width: 100%;
+  }
+
+  @include media-sm {
+    padding: 0 16px;
+  }
+}
+
+.connect-with-us {
+  height: 48px;
+  width: 182px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  outline: 1px solid rgba(0, 0, 0, 1);
+
+  font-weight: 700;
+
+  background-color: #FFF; /* Устанавливаем начальный цвет фона */
+  color: #000; /* Начальный цвет текста */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Добавляем анимацию для фонового цвета и цвета текста */
+
+}
+
+.connect-with-us:hover {
+  background-color: #3074DA; /* Цвет фона при наведении */
+  color: #FFF; /* Цвет текста при наведении */
+  outline: none; /* Убираем контур */
+}
+
+
+// react-burger-menu
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: absolute;
+  width: 36px;
+  height: 30px;
+  right: 27px;
+  top: 34px;
+  .bm-burger-bars {
+    height: 2px !important;
+    border-radius: 20px;
+  }
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #3C4F5F;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+
+.bm-menu {
+  background: rgba(255, 255, 255, 1);
+  width: 300px!important;
+  padding: 86px 32px 42px 32px;
+
+  &-wrap {
+    width: 300px!important;
+
+    @include media-xs {
+      width: 100%!important;
+    }
+
+  }
+
+  @include media-xs {
+    width: 100%!important;
+  }
+
+  .bm-item-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    & > button {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    ul {
+      width: 100%;
+      display: flex!important;
+      flex-grow: 1;
+      max-height: 300px;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      row-gap: 52px;
+    }
+
+    a {
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+}
+
+.bm-language-select {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+}
+
+.bm-links {
+  display: flex!important;
+  flex-direction: column;
+  row-gap: 32px;
+
+  &__social {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.ant-dropdown {
+  z-index: 2000;
+}

@@ -1,0 +1,61 @@
+{
+  "name": "unifive-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/inter": "^4.5.15",
+    "@fontsource/plus-jakarta-sans": "^5.0.20",
+    "@types/antd": "^1.0.0",
+    "@types/aos": "^3.0.7",
+    "antd": "^5.8.1",
+    "aos": "^2.3.4",
+    "classnames": "^2.5.1",
+    "font-proxima-nova": "^1.0.1",
+    "framer-motion": "^11.2.12",
+    "i18next": "^23.5.1",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "i18next-http-backend": "^2.2.2",
+    "react": "^18.2.0",
+    "react-burger-menu": "^3.0.9",
+    "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.5",
+    "react-i18next": "^13.2.2",
+    "react-router-dom": "^6.13.0",
+    "react-scripts": "5.0.1",
+    "sass": "^1.77.6",
+    "typescript": "^4.9.5",
+    "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "@craco/craco": "^7.0.0",
+    "@stitches/react": "^1.2.8",
+    "@types/axios": "^0.14.0",
+    "@types/node": "^16.18.12",
+    "@types/react": "^18.0.28",
+    "@types/react-burger-menu": "^2.8.7",
+    "@types/react-dom": "^18.0.10",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.3.2"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "lint": "eslint src"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+@import '../../styles/mixins.scss';
+
+
+.projects-head__btn {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+
+  .count {
+    width: 68px;
+
+    span {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    &-second {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    &-second-2 {
+      color: rgba(60, 79, 95, 0.4);
+    }
+
+  }
+
+  .count-color {
+    color: rgba(60, 79, 95, 1);
+  }
+
+  &-button {
+    cursor: pointer;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 1);
+    padding: 16px 32px;
+    border-radius: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    .arrow-left {
+      transform: rotate(0deg);
+    }
+
+    .arrow-right {
+      transform: rotate(180deg);
+    }
+  }
+
+  .active {
+    background-color: #FFFFFF;
+  }
+
+  .btn-comment {
+    border: 1px solid rgba(60, 79, 95, 1);
+  }
+
+  .active-comment {
+    background-color: rgba(60, 79, 95, 1);
+  }
+}

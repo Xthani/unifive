@@ -1,0 +1,194 @@
+@import "../../styles/mixins.scss";
+
+.activity {
+  background-color: rgba(243, 243, 243, 1);
+
+  padding: 16px;
+
+  .container {
+    padding: 0;
+  }
+
+  &-block {
+    width: 1408px;
+    margin: 0 auto;
+
+    padding: 66px 80px;
+
+    border-radius: 28px;
+    background-color: rgba(255, 255, 255, 1);
+
+    @include media-lg {
+      width: 100%;
+    }
+
+    @include media-sm {
+      padding: 32px 24px;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 1238px;
+
+    @include media-lg {
+      width: 100%;
+    }
+
+    @include media-md {
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include media-sm {
+      padding-bottom: 22px;
+    }
+
+    h2 {
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 62.4px;
+      padding-bottom: 40px;
+
+      @include media-sm {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+
+    &-image {
+      width: 470px;
+      position: relative;
+
+      @include media-md {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding-bottom: 32px;
+      }
+
+      &__icon {
+        position: absolute;
+        top: -57px;
+        right: -31px;
+
+        border-radius: 75.79px;
+        width: 96px;
+        height: 96px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: opacity 0.5s ease-in-out;
+        opacity: 1;
+
+        @include media-xs {
+          width: 85px;
+          height: 85px;
+          top: -87px;
+          right: -31px;
+        }
+
+        &.transitioning {
+          opacity: 0;
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .orange {
+        background-color: rgba(242, 153, 74, 1);
+      }
+
+      .light-blue {
+        background-color: rgba(68, 125, 187, 1);
+      }
+
+      .light-grey {
+        background-color: rgba(152, 175, 188, 1)
+      }
+
+      .grey {
+        background-color: rgba(125, 138, 155, 1)
+      }
+
+      .beg {
+        background-color: rgba(193, 176, 152, 1);
+      }
+
+      &__img {
+        width: 440px;
+        height: 240px;
+        border-radius: 400px;
+        object-fit: cover;
+        overflow: hidden;
+        transition: opacity 0.5s ease-in-out;
+        opacity: 1;
+
+        @include media-sm {
+          width: 100%;
+          height: unset;
+        }
+      }
+
+      &__img.transitioning {
+        opacity: 0;
+      }
+    }
+  }
+
+  /* Стили для отображения FAQ списка в двух колонках */
+  &__description-column {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 0; /* Убираем стандартный отступ списка */
+
+      @include media-xs {
+        flex-wrap: nowrap;
+        flex-direction: column;
+      }
+
+      li {
+        width: 50%; /* Каждый элемент списка занимает половину ширины родителя */
+        position: relative; /* Для позиционирования псевдоэлемента с точкой */
+        padding-left: 20px; /* Добавляем отступ для текста, чтобы не налезал на точку */
+        padding-top: 15px;
+
+        @include media-xs {
+          width: 100%;
+        }
+      }
+
+      li::before {
+        content: '•'; /* Добавляем точку */
+        position: absolute;
+        left: 0;
+        color: black; /* Цвет точки, можно изменить на нужный */
+        font-size: 16px; /* Размер точки, можно адаптировать под дизайн */
+        line-height: 1.2; /* Выравниваем точку по вертикали */
+        color: rgba(135, 140, 145, 1);
+      }
+    }
+  }
+
+  .custom-collapse {
+    @include media-sm {
+      width: 100%;
+    }
+  }
+
+}

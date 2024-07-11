@@ -1,0 +1,144 @@
+@import "../../styles/mixins";
+
+/*todo experts*/
+.experts {
+  height: 666px;
+  background: linear-gradient(-47.08deg, rgb(60, 79, 95) 0.835%, rgb(158, 167, 175) 100%);
+  color: #FFFFFF;
+
+  @include media-xs {
+    height: 835px;
+  }
+
+  &-head {
+    padding-top: 100px;
+    padding-bottom: 110px;
+    display: flex;
+    justify-content: space-between;
+
+    @include media-xs {
+      flex-direction: column;
+      padding-top: 42px;
+      padding-bottom: 24px;
+    }
+
+    h2 {
+      color: #f5f5f5;
+      width: 568px;
+
+      font-size: 48px;
+      line-height: 62.4px;
+
+      @include media-xs {
+        width: 100%;
+        font-size: 28px;
+        line-height: 36.4px;
+        font-weight: 600;
+      }
+    }
+
+    p {
+      color: #f5f5f5;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 27px;
+
+      width: 557px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 1);
+
+      @include media-xs {
+        width: 100%;
+        font-size: 12px;
+        line-height: 21.4px;
+        font-weight: 400;
+      }
+
+    }
+  }
+
+  &-clients {
+    padding-bottom: 134px;
+    display: flex;
+    justify-content: space-between;
+
+    @include media-sm {
+      flex-direction: column;
+      padding-bottom: 44px;
+    }
+
+    &__title {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      h6 {
+        color: #f5f5f5;
+        font-size: 64px;
+      }
+
+      span {
+        color: #f5f5f5;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+    }
+
+    &__logo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 44px;
+      width: 979px;
+
+
+      @include media-lg {
+        display: flex;
+        width: 100%;
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      @include media-xs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .logo-wrapper {
+        width: 100%;
+      }
+
+      & > :nth-child(6) {
+        grid-column-start: 1;
+      }
+
+      &-item {
+        width: 160px;
+        height: 90px;
+        padding: 5px 10px;
+        border-radius: 16px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+
+        img {
+          max-width: 120px;
+          filter: brightness(0) saturate(100%) invert(1) contrast(1000%) brightness(90%);
+          transition: filter 0.3s ease;
+        }
+      }
+
+      &-item:hover {
+        background: linear-gradient(-14.74deg, rgb(255, 255, 255) -11.413%, rgba(255, 255, 255, 0.3) 64.605%);
+
+        img {
+          filter: none;
+        }
+      }
+    }
+
+  }
+}

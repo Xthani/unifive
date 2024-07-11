@@ -1,0 +1,37 @@
+@import '../../styles/mixins.scss';
+
+
+.custom-collapse-text {
+  width: 396px;
+
+  &__header {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0; // Убедитесь, что padding постоянен, чтобы избежать изменения размеров
+
+    h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 38.4px;
+      color: #fff;
+    }
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #fff;
+    font-weight: 500;
+    line-height: 28.8px;
+
+    &.open {
+      max-height: 200px; // Adjust this value based on the content height
+    }
+  }
+}

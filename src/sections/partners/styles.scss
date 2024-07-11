@@ -1,0 +1,85 @@
+@import "../../styles/mixins.scss";
+
+// todo partners
+.partners {
+  background: linear-gradient(-47.08deg, rgb(60, 79, 95) 0.835%, rgb(158, 167, 175) 100%);
+  color: #FFFFFF;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 100px 0 132px;
+
+    @include media-sm {
+      padding: 42px 0 42px;
+    }
+
+    @include media-sm {
+      flex-direction: column;
+    }
+  }
+
+  &-head {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 48px;
+      margin-bottom: 58px;
+
+      @include media-sm {
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 24px;
+      }
+    }
+
+    p {
+      margin-bottom: 20px;
+
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 25.2px;
+
+      width: 351px;
+
+      @include media-sm {
+        margin-bottom: 20px;
+        width: 100%;
+        font-size: 12px;
+        line-height: 22px;
+        text-transform: uppercase;
+      }
+
+    }
+  }
+
+  &-logo {
+    width: 730px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    @include media-lg {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @include media-sm {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 16px;
+      justify-items: center;
+    }
+
+    @include media-xs {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+  }
+}
+
+

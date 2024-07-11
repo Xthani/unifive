@@ -1,0 +1,105 @@
+@import "../../styles/mixins.scss";
+
+// todo footer
+.footer {
+  height: 314px;
+  padding: 64px 0 85px;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .slogan {
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(60, 79, 95, 1);
+      margin-top: 10px;
+
+      @include media-md {
+        font-size: 12px;
+      }
+    }
+
+    @include media-xs {
+      flex-direction: column;
+      width: 100%;
+      gap: 16px;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      @include media-md {
+        display: none;
+      }
+
+      a {
+        font-size: 14px;
+
+      }
+
+      a:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__contacks {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+
+
+    &-item {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(60, 79, 95, 1);
+
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &-last-item {
+      width: 257px;
+      font-family: 'Roboto Light', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      color: rgba(60, 79, 95, 1);
+
+      display: flex;
+      align-items: start;
+      gap: 16px;
+    }
+
+    &-item:hover {
+      opacity: 0.7;
+    }
+
+    &-last-item:hover {
+      opacity: 0.7;
+    }
+
+  }
+
+  &__action {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+
+    @include media-xs {
+      margin: 24px 0;
+
+      a {
+        width: 100%;
+      }
+    }
+
+  }
+}

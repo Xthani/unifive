@@ -1,0 +1,13 @@
+@import '../../styles/mixins.scss';
+
+
+.language-selector {
+  width: 64px;
+  padding: 4px 10px;
+
+  span {
+    font-size: 14px;
+    font-weight: 700;
+
+  }
+}

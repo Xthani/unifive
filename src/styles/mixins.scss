@@ -1,0 +1,430 @@
+@import './variables.scss';
+
+// Media
+@mixin media-xs {
+  @media (max-width: $breakpointXs) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media (max-width: $breakpointSm) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media (max-width: $breakpointMd) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media (max-width: $breakpointLg) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media (max-width: $breakpointXl) {
+    @content;
+  }
+}
+
+@mixin media-xxl {
+  @media (max-width: $breakpointXXl) {
+    @content;
+  }
+}
+
+@mixin addFont($font: 'Museo Sans Cyrl', $style: 'Bold') {
+  $font: to-lower-case($font);
+  $style: to-lower-case($style);
+
+  @if $font == 'museo sans cyrl' {
+    @if $style == 'bold' {
+      font-family: 'Museo Sans Cyrl Bold';
+    }
+    @if $style == 'light' {
+      font-family: 'Museo Sans Cyrl Light';
+    }
+  }
+}
+
+// Typography
+@mixin big($color: $c-black, $style: 'Bold') {
+  @include addFont($font: 'Museo Sans Cyrl', $style: $style);
+  font-family: 'Proxima Nova Bold';
+  font-size: 160px;
+  line-height: 70px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+  @include media-md {
+    font-size: 130px;
+  }
+  @include media-xs {
+    font-size: 96px;
+    line-height: 70px;
+  }
+}
+
+@mixin bigNum($color: $c-black) {
+  font-family: 'Museo Sans Cyrl Bold';
+  font-size: 96px;
+  line-height: 70px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+  @include media-md {
+    font-size: 60px;
+  }
+  @include media-xs {
+    font-size: 64px;
+  }
+}
+
+@mixin main-title($color: $c-black) {
+  font-family: 'Museo Sans Cyrl Bold';
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 75px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+  @include media-md {
+    font-size: 48px;
+    line-height: 60px;
+  }
+  @include media-xs {
+    font-size: 30px;
+    line-height: 38px;
+  }
+}
+
+@mixin main-subtitle($color: $c-black) {
+  font-family: 'Museo Sans Cyrl Bold';
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 70px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+  @include media-md {
+    font-size: 40px;
+    line-height: 60px;
+  }
+  @include media-xs {
+    font-size: 24px;
+    line-height: 38px;
+  }
+}
+
+@mixin h1($color: $c-black) {
+  font-family: 'Museo Sans Cyrl Bold';
+  font-size: 40px;
+  line-height: 50px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+  @include media-xs {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+@mixin h2($color: $c-black) {
+  font-family: 'Museo Sans Cyrl Bold';
+  font-size: 24px;
+  line-height: 36px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+  @include media-xs {
+    font-size: 16px;
+  }
+}
+
+@mixin body($color: $c-black, $style: 'Bold', $lineHeight: 18px) {
+  @include addFont($font: 'Museo Sans Cyrl', $style: $style);
+  font-size: 14px;
+  line-height: $lineHeight;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+  @include media-xs {
+    font-size: 10px;
+  }
+}
+
+@mixin additional($color: $c-black) {
+  font-family: 'Museo Sans Cyrl Light';
+  font-size: 12px;
+  line-height: 27px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+  @include media-xs {
+    font-size: 10px;
+  }
+}
+
+@mixin title($color: $c-black) {
+  font-family: 'Museo Sans Cyrl Bold';
+  font-size: 18px;
+  line-height: 30px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+  @include media-xs {
+    font-size: 14px;
+  }
+}
+
+@mixin title2($color: $c-black) {
+  font-family: 'Museo Sans Cyrl Bold';
+  font-size: 36px;
+  line-height: 70px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+  @include media-md {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  @include media-xs {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+@mixin subtitle($color: $c-black, $style: 'bold', $lineHeight: 18px) {
+  @include addFont($font: 'Museo Sans Cyrl', $style: $style);
+  font-size: 13px;
+  line-height: $lineHeight;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+  @include media-xs {
+    font-size: 10px;
+  }
+}
+
+@mixin label($color: $c-black, $style: 'light', $lineHeight: 18px) {
+  @include addFont($font: 'Museo Sans Cyrl', $style: $style);
+  font-size: 16px;
+  line-height: $lineHeight;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+  @include media-xs {
+    font-size: 12px;
+  }
+}
+
+@mixin table-subtitle($color: $c-black, $style: 'bold', $lineHeight: 16px) {
+  @include addFont($font: 'Museo Sans Cyrl', $style: $style);
+  font-size: 20px;
+  line-height: $lineHeight;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+  @include media-xs {
+    font-size: 14px;
+  }
+}
+
+@mixin h1-new($color: $c-grey-400) {
+  font-family: 'Proxima Nova Rg';
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 80px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+}
+
+@mixin h2-new($color: $c-grey-400, $fontFamily: 'Proxima Nova Rg') {
+  font-family: $fontFamily;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 64px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+}
+
+@mixin h3-new($color: $c-grey-400, $fontFamily: 'Proxima Nova Rg') {
+  font-family: $fontFamily;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 48px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+}
+
+@mixin h4-new($color: $c-grey-400, $fontFamily: 'Proxima Nova Rg') {
+  font-family: $fontFamily;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+}
+
+@mixin h5-new($color: $c-grey-400, $fontFamily: 'Proxima Nova Rg') {
+  font-family: $fontFamily;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+}
+
+@mixin h6-new($color: $c-grey-400, $fontFamily: 'Proxima Nova Rg') {
+  font-family: $fontFamily;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+}
+
+@mixin subtitle1-new($color: $c-grey-400) {
+  font-family: 'Proxima Nova Rg';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+}
+
+@mixin subtitle2-new($color: $c-grey-400, $weight: 700, $fontFamily: 'Proxima Nova Rg') {
+  font-family: $fontFamily;
+  font-weight: $weight;
+  font-size: 16px;
+  line-height: 24px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+}
+
+@mixin subtitle3-new($color: $c-grey-400) {
+  font-family: 'Proxima Nova Rg';
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+}
+
+@mixin body1-new-lg($color: $c-grey-400) {
+  font-family: 'Proxima Nova Rg';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+}
+@mixin body1-new($color: $c-grey-400) {
+  font-family: 'Proxima Nova Rg';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+}
+
+@mixin body2-new($color: $c-grey-400) {
+  font-family: 'Proxima Nova Rg';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+}
+
+@mixin body3-new($color: $c-grey-400) {
+  font-family: 'Proxima Nova Rg';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: $color;
+  transition: $transitionDefaultDuration all ease;
+}
+
+
+
+@mixin shadow1() {
+  box-shadow: 0px 1px 2px rgba(145, 158, 171, 0.16);
+}
+
+@mixin shadow2() {
+  box-shadow: 0px 8px 16px rgba(145, 158, 171, 0.16);
+}
+
+@mixin shadow3() {
+  box-shadow: 0px 12px 24px -4px rgba(145, 158, 171, 0.16);
+}
+
+@mixin shadow4() {
+  box-shadow: 0px 16px 32px -4px rgba(145, 158, 171, 0.16);
+}
+
+@mixin shadow5() {
+  box-shadow: 0px 20px 40px -4px rgba(145, 158, 171, 0.16);
+}
+
+@mixin shadow6() {
+  box-shadow: 0px 24px 48px rgba(145, 158, 171, 0.16);
+}
+
+@mixin shadow7() {
+  box-shadow: 0px 0px 2px rgba(145, 158, 171, 0.2),
+    0px 12px 24px -4px rgba(145, 158, 171, 0.12);
+}
+
+@mixin shadow8() {
+  box-shadow: -40px 40px 80px -8px rgba(145, 158, 171, 0.24);
+}
+
+@mixin shadow9() {
+  box-shadow: 0px 0px 2px rgba(145, 158, 171, 0.24),
+    -20px 20px 40px -4px rgba(145, 158, 171, 0.24);
+}
+
+@mixin shadow10() {
+  box-shadow: 0px 2px 6px rgba(145, 158, 171, 0.24);
+}
+
+// Other
+@mixin container {
+  padding-left: 61px;
+  padding-right: 61px;
+  width: 100%;
+  min-width: 375px;
+
+  @include media-md {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @include media-sm {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@mixin content {
+  background-color: $c-white;
+  border-radius: 5px;
+  padding: 38px 72px;
+
+  @include media-md {
+    padding: 38px 60px;
+  }
+  @include media-sm {
+    padding: 38px 30px;
+  }
+  @include media-xs {
+    padding: 22px 20px;
+  }
+}
+
+@mixin pulseAnswer() {
+  @keyframes pulseCorrectAnswer {
+    0% {
+      border: 2px solid rgba(0, 171, 85, 0);
+      box-shadow: inset 0px 0px 24px rgba(0, 171, 85, 0);
+    }
+    100% {
+      border: 2px solid rgba(0, 171, 85, 1);
+      box-shadow: inset 0px 0px 24px rgba(0, 171, 85, 0.4);
+    }
+  }
+}
+
+
